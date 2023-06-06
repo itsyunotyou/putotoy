@@ -1,0 +1,61 @@
+
+body{
+  margin:0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; 
+  font-family: jap;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  scroll-behavior: none;
+}
+
+.navArea{
+  position: absolute;
+  z-index: 10;
+}
+.img-overlay{
+  position: absolute;
+  z-index: 0;
+  height: 50vh;
+  width: 50vw;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+
+}
+
+img{
+  width: 30vw;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.j1{
+  position: absolute;
+  top: 52vh;
+  left: 55vw;
+  color: transparent;
+  z-index: 50;
+}
+
+.j2{
+  position: absolute;
+  top: 32vh;
+  left: 45vw;
+  color: transparent;
+  z-index: 50;
+}
