@@ -23,8 +23,8 @@ body{
 .img-overlay{
   position: absolute;
   z-index: 0;
-  height: 50vh;
-  width: 50vw;
+  height: 70vh;
+  width: 70vw;
   top:0;
   bottom: 0;
   left: 0;
@@ -35,7 +35,7 @@ body{
 }
 
 img{
-  width: 30vw;
+  width: 40vw;
   position: absolute;
   margin: auto;
   top: 0;
@@ -49,13 +49,65 @@ img{
   top: 52vh;
   left: 55vw;
   color: transparent;
+  width: 80px;
+  height: 80px;
   z-index: 50;
+}
+
+.j1:hover{
+  background-image: url(home/read.gif);
+  background-size: cover;
+  overflow: show;
 }
 
 .j2{
   position: absolute;
   top: 32vh;
   left: 45vw;
+  height: 80px;
+  width: 57px;
   color: transparent;
   z-index: 50;
 }
+
+.j2:hover{
+  background-image: url(home/shop.gif);
+  background-size: cover;
+  overflow: show;
+}
+
+
+.j3{
+  position: absolute;
+  top: 52vh;
+  left: 41vw;
+  height: 100px;
+  width: 57px;
+  color: transparent;
+  z-index: 50;
+}
+
+.j3:hover{
+  background-image: url(home/change.gif);
+  background-size: cover;
+  overflow: show;
+}
+
+.call{
+  position: absolute;
+  top: 32vh;
+  left: 45vw;
+  height: 80px;
+  width: 80px;
+  z-index:100;
+}
+
+.flcc{
+  position: absolute;
+  top: 12vh;
+  left: 45vw;
+  height: 80px;
+  width: 400px;
+  z-index:100;
+}
+
