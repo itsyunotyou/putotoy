@@ -1,0 +1,344 @@
+
+body{
+    margin:0;
+    padding: 0;
+    height: 100vh;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    scroll-behavior: none;
+    overflow: hidden;
+    background: url(pretty.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    }
+  
+  .outercontainer{
+    margin: 0;
+    padding: 0;
+  }
+  .small img{
+    width: 100px;
+  }
+  
+  .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    float: left;
+  }
+  
+  .left img{
+    width: 200px;
+    padding: 0;
+    margin-left: 3px;
+  
+  }
+
+  .middle {
+    display: block;
+  }
+
+  .right{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    float: right;
+
+  }
+  
+  .right img{
+    width: 200px;
+    padding: 0;
+    margin-right: 3px;
+  
+  }
+
+
+
+
+#main-container {
+display: flex;
+height: 90vh;
+width: 96vw;
+margin-top: 5vh;
+margin-bottom: 5vh;
+margin-right: 2vw;
+align-items: center;
+
+}
+
+#left-content{
+/* Forces side columns to stay same width */
+flex: 15vw;
+height: 70vh;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+overflow-y: none;
+align-self: center;
+padding: 2vw;
+border: solid black 2px;
+border-radius: 20px;
+box-shadow: 5px 10px;
+}
+
+#main-content{
+flex: 81vw;
+display: flex;
+height: 70vh;
+justify-content: center;
+align-items: center;
+padding: 2vw;
+
+
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+transform: translate(2vw, 2vw);
+height: 70vh;
+overflow: show;
+position: relative;
+margin: auto;
+display: flex;
+justify-content: end;
+align-items: end;
+
+}
+
+
+
+.slideshow-container .mySlides img {
+/* Shrinks images to fit container */
+width: 100%; /* or any custom size */
+height: 100%; 
+
+}
+
+
+
+
+h4{
+font-size: 1.1em;
+margin: 0;
+}
+strong{
+font-size: 0.9em;
+letter-spacing: 0.1em;
+line-height: 1.1em;
+}
+
+p{
+font-size: 0.8em;
+margin: 0;
+margin-top: -2em;
+}
+
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+
+color: rgb(0, 0, 0);
+font-weight: bold;
+font-size: 0.7em;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.prev{
+left: 0;
+border-radius: 3px 0 0 3px;
+}
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+
+
+.haco{
+text-decoration: none;
+font-weight: bold;
+font-size: 0.8em;
+position: relative;
+color: rgb(255, 251, 0);
+background-color: black;
+border: dotted rgb(0, 255, 225) 5px;
+border-radius: 20px;
+padding: 1em;
+text-align: center;
+margin-bottom: 2em;
+
+}
+
+.haco:hover{
+position: relative;
+text-decoration: none;
+font-weight: bold;
+color: rgb(0, 255, 225);
+background-color: black;
+border: dotted rgb(255, 252, 91) 5px;
+border-radius: 20px;
+padding: 1em;
+
+}
+
+.haco2{
+text-decoration: none;
+font-weight: bold;
+font-size: 0.8em;
+position: relative;
+color: rgb(236, 122, 122);
+background-color: black;
+border: dotted rgb(238, 213, 255) 5px;
+border-radius: 20px;
+padding: 1em;
+text-align: center;
+margin-bottom: 2em;
+
+}
+
+.haco2:hover{
+position: relative;
+text-decoration: none;
+font-weight: bold;
+color: rgb(238, 213, 255);
+background-color: black;
+border: dotted  rgb(236, 122, 122) 5px;
+border-radius: 20px;
+padding: 1em;
+
+}
+
+.videoInsert {
+position: relative;
+height: 70vh;
+overflow: hidden;
+border-radius: 20px;
+}
+
+video {
+width: 100%;
+height: 100%;
+}
+
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+
+
+.eternapdf:hover {
+cursor: url('logos/scroll.png'), pointer;
+}
+
+
+.eternapdf:active {
+cursor: url('logos/scroll.png'), pointer;
+}
+
+
+:root * {
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+  
+
+
+
+@font-face {
+  font-family: 'cursive3';
+  src: url('cursive/Cursive.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cloud';
+  src: url('cloude/Cloude_Regular_1.02.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'jap';
+    src: url('japanese/ZenKakuGothicNew-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'jap';
+    src: url('japanese/ZenKakuGothicNew-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+nav{
+    align-items: center;
+    position: fixed;
+
+}
+
+ul{
+    padding-inline-start: 0;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+
+}
+
+nav ul li a:hover{
+    color: rgb(236, 122, 122);
+    transition: .3s;
+}
+
+
+
+.pdf{
+height: 70vh;
+border-radius: 20px;
+object-fit: contain;
+}

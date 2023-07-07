@@ -10,7 +10,7 @@ body{
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; 
-  font-family: jap;
+  font-family: Helvetica, sans-serif;
   letter-spacing: 0.1em;
   overflow: hidden;
   scroll-behavior: none;
@@ -55,9 +55,25 @@ img{
 }
 
 .j1:hover{
-  background-image: url(home/read.gif);
+  background-image: url(index/read.gif);
   background-size: cover;
   overflow: show;
+}
+
+.j1 + .read{
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.j1:hover + .read{
+  opacity: 1;
+  visibility: visible;
+
 }
 
 .j2{
@@ -71,11 +87,26 @@ img{
 }
 
 .j2:hover{
-  background-image: url(home/shop.gif);
+  background-image: url(index/shop.gif);
   background-size: cover;
   overflow: show;
 }
 
+.j2 + .shop{
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.j2:hover + .shop{
+  opacity: 1;
+  visibility: visible;
+
+}
 
 .j3{
   position: absolute;
@@ -88,9 +119,26 @@ img{
 }
 
 .j3:hover{
-  background-image: url(home/change.gif);
+  background-image: url(index/change.gif);
   background-size: cover;
   overflow: show;
+}
+
+.j3 + .donate{
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.j3:hover + .donate{
+  opacity: 1;
+  visibility: visible;
+
+
 }
 
 .call{
@@ -111,3 +159,14 @@ img{
   z-index:100;
 }
 
+.comingbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.coming{
+  margin: 0;
+  text-align: center;
+}
