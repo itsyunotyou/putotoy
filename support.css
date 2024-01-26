@@ -14,77 +14,166 @@ body{
     letter-spacing: 0.1em;
     overflow: hidden;
     scroll-behavior: none;
+    background-image: url(home/salima.JPG);
+    background-repeat: no-repeat;
+    background-size:  contain;
+    background-position: center;
     background-color: black;
   }
   
+  .donate{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 3;
+    left: 80vw;
+    top: 100vh;
+    font-size: 10px;
+    width: 5vw;
+    height: 3vh;
+
+  }
+
+  .donate a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    left: 80vw;
+    top: 100vh;
+  }
+
+
+  .donate::after body{
+    background-image: url(home/salima2.JPG);
+    background-size:  contain;
+    background-position: center;
+  }
   .outercontainer{
     margin: 0;
     padding: 0;
   }
 
-  
-  .left{
-    position: fixed;
-    top: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    float: left;
+  .outerleft {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
   
+  
+  .left{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden; 
+  white-space: nowrap;
+  animation: scrollUp 20s linear infinite;
+
+  }
+
+
   .left img{
-    width: 200px;
+    width: 10vw;
+    padding: 0;
+  
+  }
+  
+  @keyframes scrollUp {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+
+  .right{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden; 
+  white-space: nowrap;
+  animation: scrollDown 10s linear infinite;
+  z-index: -2;
+
+  }
+
+  @keyframes scrollDown {
+    from {
+      transform: translateY(50%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  .right img{
+    width: 10vw;
     padding: 0;
   
   }
 
+  
+
   .midtop {
     position: fixed;
-    left: 200px;
-    right: 200px;
-    overflow: hidden;
+    left: 0;
     top: 0;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     float: center;
+    position: absolute;
+  overflow:hidden;
+  overflow-y: hidden;
+  white-space:nowrap;
+  animation: scroll 30s linear infinite;
   }
 
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
   .midbottom img{
-    height: 100px;
+    height: 7vh;
     padding: 0;
   }
 
   .midtop img{
-    height: 100px;
+    height: 7vh;
     padding: 0;
   }
   .midbottom {
-    left: 200px;
-    right: 200px;
-    overflow: hidden;
     position: fixed;
+    right: 0;
     bottom: 0;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
     float: center;
+    position: absolute;
+  overflow:hidden;
+  overflow-y: hidden;
+  white-space:nowrap;
+    animation: rightscroll 20s linear infinite;
   }
 
-  .right{
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    float: right;
 
-  }
-  
-  .right img{
-    width: 200px;
-    padding: 0;
-    margin-right: 0px;
-  
+  @keyframes rightscroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
   }
 
   
