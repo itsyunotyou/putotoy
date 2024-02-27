@@ -55,7 +55,8 @@ html, body{
   
   
   .left{
-    position: absolute;
+    
+    position: fixed;
     display: flex;
     flex-direction: column;
     overflow:hidden; 
@@ -83,7 +84,7 @@ html, body{
 
   .right{
     right: 0;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     overflow:hidden; 
