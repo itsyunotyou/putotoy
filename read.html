@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clickable Image Slideshow</title>
+  <title>ISSU 1</title>
   <style>
     #slideshow {
       width: 100vw;
@@ -22,30 +22,32 @@
     }
 
     #prevBtn, #nextBtn {
+      display: flex;
+      flex-direction: column;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       font-size: 18px;
       cursor: pointer;
       background-color: transparent;
-      padding: 10px;
+      padding: 0;
       border: none;
     }
 
     #prevBtn {
-      left: 30px;
+      left: 10px;
     }
 
     #nextBtn {
-      right: 30px;
+      right: 10px;
     }
   </style>
 </head>
 <body>
 
 <div id="slideshow"></div>
-<button id="prevBtn" onclick="prevImage()">&#10094;</button>
-<button id="nextBtn" onclick="nextImage()">&#10095;</button>
+<button id="prevBtn" onclick="prevImage()"><img src="index/fwd_ani_arrow.gif" alt="&#10094;"><img src="index/arrowleft.gif" alt="&#10094;"></button>
+<button id="nextBtn" onclick="nextImage()"><img src="index/arrowright.gif" alt="&#10095;"><img src="index/back_ani_arrow.gif" alt="&#10095;"></button>
 
 <script>
   let currentIndex = 0;
@@ -94,8 +96,11 @@
 
   // Update button states based on the current index
   function updateButtonStates() {
-    document.getElementById('prevBtn').disabled = currentIndex === 0;
-    document.getElementById('nextBtn').disabled = currentIndex === totalImages - 1;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextBtn.style.display = currentIndex === totalImages - 1 ? 'none' : 'block';
   }
 
   // Load images when the page is loaded
