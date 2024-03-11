@@ -3,19 +3,47 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>INFO</title>
+        <link rel="stylesheet" href="info.css"></link>
     
     </head>
-    <body> 
+    <body onload="preLoad()"> 
 
-        <div class="comingbox"><p class="coming">COMING SOON</p></div>
+        <div class="parent">
+            <div class="child1">
+                <p>Putotoy is:</p>
+                <input type="checkbox" id="term" name="1" value="term" onClick="im('a1');">
+                <label for="term">a euphemism or slang term for the male genitalia.</label><br>
+                <input type="checkbox" id="magazine" name="1" value="magazine" onClick="im('a2');">
+                <label for="magazine">a magazine dedicated to paying homage to Filipino artistry and talents across the world.</label><br>
+                <p>If you have any other questions or need further clarification, feel free to ask at iloveputotoygmail.com.</p>   
+            </div>
+            <div class="child2">
+                <img id="a" src="back/salima.JPG" width="802" height="602" alt="">
+            </div>
+        </div>
 
-         <div class="shop"><p>In Tagalog, the word <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the magazine <strong>"putotoy"</strong> is a magazine dedicated to paying homage to Filipino artistry and talents across the world. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word  <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word  <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word "putotoy" is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word  <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p><p>In Tagalog, the word  <strong>"putotoy"</strong> is a colloquial term that is considered slang and can have various meanings depending on the context. It is often used as a euphemism or slang term for the male genitalia. Please note that it is considered vulgar and not appropriate for formal or polite conversations. If you have any other questions or need further clarification, feel free to ask.</p></div>
+        <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+        </div>
 
-  
+
+        
+           
+
+
+    
 
     </body>
 
-    <script src="main.js"></script>
+    <script>
+        function preLoad() {
+          a1 = new Image; a1.src = 'back/salima.JPG';  
+          a2 = new Image; a2.src = 'back/scary.jpeg';
+
+        }
+        function im(image) {
+          document.getElementById(image[0]).src = eval(image + ".src")
+        }
+        </script>
 
 
 </html>

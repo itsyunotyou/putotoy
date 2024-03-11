@@ -1,0 +1,64 @@
+html, body{
+    margin:0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    scroll-behavior: none;
+  }
+
+  .gohome{
+    display: flex;
+    flex-direction: row;
+    bottom: 3vh;
+    left: 3vw;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .gohome img{
+    position: absolute;
+  }
+
+.gohome .home{
+  z-index: 10;
+  transform: translate(0vw, -2vh);
+}
+
+.gohome .cloud{
+  z-index: 1;
+}
+
+
+  img{
+    height: 100%;
+  }
+.parent { 
+    display: flex; 
+    flex-direction: row; 
+} 
+
+.child1 { 
+  margin: auto;
+  width: 50%; 
+  height: 100vh; 
+  text-align: left; 
+  color: black; 
+} 
+
+.child2 { 
+    width: 50%; 
+    height: 100vh; 
+} 
