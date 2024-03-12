@@ -41,24 +41,37 @@ html, body{
   z-index: 1;
 }
 
+.hide {
+  display:none;
+}
+
 
   img{
     height: 100%;
+    width: auto;
   }
 .parent { 
     display: flex; 
     flex-direction: row; 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 } 
 
 .child1 { 
   margin: auto;
-  width: 50%; 
-  height: 100vh; 
+  padding: 5%;
+  line-break: 10px;
+  width: 40vw; 
+  height: 50vh; 
   text-align: left; 
   color: black; 
 } 
 
 .child2 { 
-    width: 50%; 
-    height: 100vh; 
+  margin: auto;
+    width: 40vw; 
+    height: 50vh; 
+    padding: 5%;
+    justify-self: center;
 } 

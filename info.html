@@ -11,14 +11,18 @@
         <div class="parent">
             <div class="child1">
                 <p>Putotoy is:</p>
-                <input type="checkbox" id="term" name="1" value="term" onClick="im('a1');">
-                <label for="term">a euphemism or slang term for the male genitalia.</label><br>
-                <input type="checkbox" id="magazine" name="1" value="magazine" onClick="im('a2');">
-                <label for="magazine">a magazine dedicated to paying homage to Filipino artistry and talents across the world.</label><br>
-                <p>If you have any other questions or need further clarification, feel free to ask at iloveputotoygmail.com.</p>   
+                <input id="chk-box1" type="checkbox" onchange="toggleImages();">a euphemism or slang term for the male genitalia.</input>
+                <br><br>
+                <input id="chk-box2" type="checkbox" onchange="toggleImages();">a magazine dedicated to paying homage to Filipino artistry and talents across the world</input>
+                <p>If you have any other questions or need further clarification, feel free to ask at</p> <a href="mailto:iloveputotoygmail.com">iloveputotoygmail.com</a> 
             </div>
             <div class="child2">
-                <img id="a" src="back/salima.JPG" width="802" height="602" alt="">
+
+
+                <img alt="1" id="1" src="back/bed.jpeg" title="1"/>
+                <img alt="2" id="2" src="back/stand.jpeg" title="2" class="hide" />
+                <img alt="3" id="3" src="back/robbie.jpg" title="3" class="hide" />
+                <img alt="4" id="4" src="back/rob.jpg" title="4" class="hide" />
             </div>
         </div>
 
@@ -35,15 +39,30 @@
     </body>
 
     <script>
-        function preLoad() {
-          a1 = new Image; a1.src = 'back/salima.JPG';  
-          a2 = new Image; a2.src = 'back/scary.jpeg';
+        var shown = 1;
+
+        function toggleImages() {
+            if (document.getElementById('chk-box1').checked) {
+                if (document.getElementById('chk-box2').checked) {
+                    showImage(4);
+                } else {
+                    showImage(2);
+                }
+            } else if (document.getElementById('chk-box2').checked) {
+                showImage(3);
+            } else {
+                showImage(1);
+            }
+        }
+
+        function showImage(n) {
+            console.log(document.getElementById(n));
+            document.getElementById(shown).style.display = 'none';
+            document.getElementById(n).style.display = 'block';
+            shown = n;
 
         }
-        function im(image) {
-          document.getElementById(image[0]).src = eval(image + ".src")
-        }
-        </script>
+    </script>
 
 
 </html>
