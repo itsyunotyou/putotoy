@@ -93,39 +93,42 @@ html, body{
 
 @media only screen and (max-width: 1000px){
   .parent { 
+    position: fixed;
     display: flex; 
     flex-direction: column; 
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    justify-content: end;
+    bottom: 0;
+    gap: 10vh;
 } 
 
 .child1 { 
-  margin: 0;
   line-break: 10px;
   height: 30vh; 
   width: 90vw;
   text-align: center; 
   color: black; 
+  margin: auto;
+  padding: 0;
   
 } 
 
 .child2 { 
-    margin: auto;
     height: 40vh; 
     width: 90vw;
     justify-self: center;
     font-size: 8px;
-    padding: auto;
-
+    margin: auto;
+  padding: 0;
 } 
 
-.child2 img{
+.child1 img{
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 
