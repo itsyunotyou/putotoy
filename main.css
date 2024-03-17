@@ -31,6 +31,7 @@ html, body{
   letter-spacing: 0.1em;
   overflow: hidden;
   scroll-behavior: none;
+  text-align: center;
 }
 
 
@@ -303,9 +304,16 @@ html, body{
   }
 
   .mobile{
-    display: block;
+    justify-content: center;
+    top: 10vh;
+    gap: 10vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
     height: 100vh;
     position: fixed;
+    margin: auto;
+    left: 17%;
   }
 
 
