@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISSU 1</title>
   <style>
-    #slideshow {
+    footer{
+    position: fixed;
+    right: 0;
+    text-align: right;
+    bottom: 0; /* stick to bottom */
+    margin: 0px;
+
+  }
+  
+  #slideshow {
       width: 100vw;
       height: 100vh;
       margin: auto;
@@ -67,37 +76,57 @@
     #nextBtn {
       right: 10px;
     }
+
+    @media only screen and (max-width: 1000px){
+.content{
+      display: none;
+}
+  .mobile{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items:center;
+    margin: 0;
+
+    .mobile p{
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 1000px){
+.mobile{
+      display: none;
+}
+}
+
+
+
   </style>
 </head>
 <body>
 
   <div class="content">
-    <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+    <div class="gohome">
+      <a href="index.html" >
+        <img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
     </div>
   
   
-  <div id="slideshow"></div>
-  <button id="prevBtn" onclick="prevImage()"><img src="index/fwd_ani_arrow.gif" alt="&#10094;"><img src="index/arrowleft.gif" alt="&#10094;"></button>
-  <button id="nextBtn" onclick="nextImage()"><img src="index/arrowright.gif" alt="&#10095;"><img src="index/back_ani_arrow.gif" alt="&#10095;"></button>
-  
+    <div id="slideshow"></div>
+    <button id="prevBtn" onclick="prevImage()"><img src="index/fwd_ani_arrow.gif" alt="&#10094;"><img src="index/arrowleft.gif" alt="&#10094;"></button>
+    <button id="nextBtn" onclick="nextImage()"><img src="index/arrowright.gif" alt="&#10095;"><img src="index/back_ani_arrow.gif" alt="&#10095;"></button>
+    
 </div>
-  <div id="mobile">
-    <a class="typewrite" data-period="2000" data-type='[ "Please dont access me on mobile" ]'>
-      <span class="wrap"></span>
-    </a>
-  
-    <div class="bin"> 
-      <picture>
-        <source type="image/webp" srcset="whee/bin.webp">
-        <source type="image/png" srcset="whee/bin.png">
-        <img src="whee/bin.png">
-      </picture>
-    </div>
-  
-    <footer>&copy; Copyright 2024, putotoy </footer>
+
+  <div class="mobile">
+    <p>Would you watch Avatar on your phone? No. Don't read Putotoy on your phone either.</p>
   </div>
 
-
+  <footer>&copy; Copyright 2024, putotoy </footer>
 
 
 <script>
