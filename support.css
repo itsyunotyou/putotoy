@@ -11,16 +11,6 @@ html, body{
     scroll-behavior: none;
   }
 
-  img.bg {
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-  
   .donate{
     background-color: transparent;
     border: none;
@@ -56,16 +46,6 @@ html, body{
   }
 
 
-  .bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }
 
   
   
@@ -224,6 +204,9 @@ html, body{
     color: rgba(255, 255, 255, 0.458);
   }
 
+  .backapril{
+    text-align: right;
+  }
 
   .donate{
     top: 38vh;
@@ -232,8 +215,8 @@ html, body{
     text-align: center;
     position: absolute;
     z-index: 10;
-    width: 100px;
-    height: 100px;
+    width: 5vw;
+    height: 5vw;
     background-image: url(back/hatu2.gif);
     background-position: center;
     background-repeat: no-repeat;
@@ -273,3 +256,77 @@ html, body{
 .gohome .cloud{
   z-index: 1;
 }
+
+
+@media only screen and (min-width: 1000px){
+  img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+}
+
+@media only screen and (max-width: 1000px){
+ 
+.gohome{
+  display: flex;
+  flex-direction: row;
+  top: 10vh;
+  left: 15vw;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  width: 12vw;
+  height: 12vw;
+}
+
+.gohome img{
+  position: absolute;
+}
+
+.gohome .home{
+z-index: 10;
+transform: translate(0vw, -2vh);
+}
+
+.gohome .cloud{
+z-index: 1;
+}
+
+.donate{
+  top: 38vh;
+  left: 60vw;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  width: 12vw;
+  height: 12vw;
+  background-image: url(back/hatu2.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img.bg {
+  height: 100vh;
+  top: 0;
+  right: 0;
+}
+
+.backapril{
+  text-align: right;
+  height: 0vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -10;
+}
+  }
+  
