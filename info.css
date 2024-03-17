@@ -77,7 +77,7 @@ html, body{
   line-break: 10px;
   width: 40vw; 
   height: 50vh; 
-  text-align: left; 
+  text-align: center; 
   color: black; 
 } 
 
@@ -107,7 +107,7 @@ html, body{
   line-break: 10px;
   height: 30vh; 
   width: 90vw;
-  text-align: left; 
+  text-align: center; 
   color: black; 
   
 } 
