@@ -305,6 +305,7 @@ html, body{
   .mobile{
     display: block;
     height: 100vh;
+    position: fixed;
   }
 
 
