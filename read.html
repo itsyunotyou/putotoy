@@ -71,13 +71,34 @@
 </head>
 <body>
 
-  <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+  <div class="content">
+    <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+    </div>
+  
+  
+  <div id="slideshow"></div>
+  <button id="prevBtn" onclick="prevImage()"><img src="index/fwd_ani_arrow.gif" alt="&#10094;"><img src="index/arrowleft.gif" alt="&#10094;"></button>
+  <button id="nextBtn" onclick="nextImage()"><img src="index/arrowright.gif" alt="&#10095;"><img src="index/back_ani_arrow.gif" alt="&#10095;"></button>
+  
+</div>
+  <div id="mobile">
+    <a class="typewrite" data-period="2000" data-type='[ "Please dont access me on mobile" ]'>
+      <span class="wrap"></span>
+    </a>
+  
+    <div class="bin"> 
+      <picture>
+        <source type="image/webp" srcset="whee/bin.webp">
+        <source type="image/png" srcset="whee/bin.png">
+        <img src="whee/bin.png">
+      </picture>
+    </div>
+  
+    <footer>&copy; Copyright 2024, putotoy </footer>
+  </div>
   </div>
 
 
-<div id="slideshow"></div>
-<button id="prevBtn" onclick="prevImage()"><img src="index/fwd_ani_arrow.gif" alt="&#10094;"><img src="index/arrowleft.gif" alt="&#10094;"></button>
-<button id="nextBtn" onclick="nextImage()"><img src="index/arrowright.gif" alt="&#10095;"><img src="index/back_ani_arrow.gif" alt="&#10095;"></button>
 
 <script>
   let currentIndex = 0;
@@ -137,6 +158,47 @@
   window.onload = function() {
     loadImages();
   };
+
+  function load(url) {
+    // display loading image here...
+    document.getElementById('loadingImg').visible = true;
+    // request your data...
+    var req = new XMLHttpRequest();
+    req.open("POST", url, true);
+
+    req.onreadystatechange = function () {
+        if (req.readyState == 4 && req.status == 200) {
+            // content is loaded...hide the gif and display the content...
+            if (req.responseText) {
+                document.getElementById('content').innerHTML = req.responseText;
+                document.getElementById('loadingImg').visible = false;
+            }
+        }
+    };
+    request.send(vars);
+}
+
+        if (navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/webOS/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/iPad/i) ||
+            navigator.userAgent.match(/iPod/i) ||
+            navigator.userAgent.match(/BlackBerry/i) ||
+            navigator.userAgent.match(/Windows Phone/i)
+   
+          ) {
+  
+            document.getElementById('contents').style.visibility="hidden";
+            document.getElementById('mobile').style.visibility="visible";
+          } 
+          
+          
+          else {
+      
+            document.getElementById('contents').style.visibility="visible";
+            document.getElementById('mobile').style.visibility="hidden";
+        }
+      
 </script>
 
 </body>
