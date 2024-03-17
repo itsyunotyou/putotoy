@@ -113,18 +113,22 @@ html, body{
 } 
 
 .child2 { 
-  margin: 0;
+    margin: auto;
     height: 40vh; 
     width: 90vw;
     justify-self: center;
     font-size: 8px;
     padding: auto;
+    text-align: center;
+
 } 
 
 .child2 img{
   width: 100%;
   height: auto;
 }
+
+
 
 .gohome{
   display: flex;
