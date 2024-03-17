@@ -3,6 +3,18 @@
   font-family: 'BILLY';
   src: url('font/ORGANICAL\ PERSONAL\ USE.ttf');
 }
+footer{
+  position: fixed;
+  right: 0;
+  text-align: right;
+  bottom: 0; /* stick to bottom */
+  margin: 0px;
+  font-size: 10px;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  margin: 0.5%;
+
+}
 
 html, body{
   margin:0;
