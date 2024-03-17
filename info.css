@@ -118,6 +118,7 @@ html, body{
     width: 90vw;
     justify-self: center;
     font-size: 8px;
+    padding: auto;
 } 
 
 .child2 img{
