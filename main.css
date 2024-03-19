@@ -39,7 +39,7 @@ html, body{
 
 
 #slider{
-  width: 40%;
+  width: 50%;
   position: absolute;
   margin: auto;
   top: 0;
@@ -305,18 +305,26 @@ html, body{
 
   .mobile{
     justify-content: center;
-    top: 10vh;
-    gap: 10vw;
     text-align: center;
-    display: flex;
-    flex-direction: row;
     height: 100vh;
     position: fixed;
     margin: auto;
-    left: 17%;
   }
 
 
+  .buttons{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    margin: auto;
+    position: fixed;
+    margin: auto;
+    top: 5vh;
+    gap: 10vw;
+    text-align: center;
+    justify-content: center;
+  }
 #slider{
   width: 90%;
   position: absolute;
@@ -335,4 +343,18 @@ html, body{
   width: 100%;
 }
 
+}
+
+
+
+.divider{
+  text-align: center;
+  position: fixed;
+  bottom: 10vh;
+  width: 100vw;
+  margin: auto;
+}
+
+.divider img{
+  width: 90%;
 }
