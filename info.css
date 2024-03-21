@@ -122,7 +122,8 @@ html, body{
     justify-self: center;
     font-size: 8px;
     margin: auto;
-  padding: 0;
+    padding: 0;
+  
 } 
 
 .child1 img{
