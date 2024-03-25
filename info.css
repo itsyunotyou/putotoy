@@ -161,3 +161,19 @@ z-index: 1;
 }
   }
   
+
+.contacts{
+  display: flex;
+  gap: 10px;
+}
+
+.contacts a{
+  color: black;
+}
+
+.contacts a:hover{
+  color: blue;
+}
+.contacts p{
+  margin: 0;
+}
