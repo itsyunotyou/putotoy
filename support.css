@@ -86,7 +86,7 @@ html, body{
     overflow:hidden; 
   white-space: nowrap;
   animation: scrollDown 20s linear infinite;
-
+  text-align: right;
 
   }
 
