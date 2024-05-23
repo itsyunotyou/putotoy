@@ -1,24 +1,33 @@
+Sure, here is your modified HTML with the `src` attributes of the `<img>` tags changed to `data-src`:
+
+```html
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>INFO</title>
         <link rel="stylesheet" href="info.css"></link>
-    
     </head>
+    <script type="text/javascript">
+        window.GUMLET_CONFIG = {
+            hosts: [{
+                current: "{{example.com}}",
+                gumlet: "putotoy.gumlet.io"
+            }],
+            lazy_load: true
+        };
+        (function(){d=document;s=d.createElement("script");s.src="https://cdn.jsdelivr.net/npm/gumlet.js@2.2/dist/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
     <body onload="preLoad()"> 
 
         <div class="parent">
             <div class="child1">
-
-
-                <img alt="1" id="1" src="back/bed.jpeg" title="1"/>
-                <img alt="2" id="2" src="back/scary.jpeg" title="2" class="hide" />
-                <img alt="3" id="3" src="back/robbie.jpg" title="3" class="hide" />
-                <img alt="4" id="4" src="back/rob.JPG" title="4" class="hide" />
+                <img alt="1" id="1" data-src="back/bed.jpeg" title="1"/>
+                <img alt="2" id="2" data-src="back/scary.jpeg" title="2" class="hide" />
+                <img alt="3" id="3" data-src="back/robbie.jpg" title="3" class="hide" />
+                <img alt="4" id="4" data-src="back/rob.JPG" title="4" class="hide" />
             </div>
             <div class="child2">
-
                 <div class="grandchild">
                     <p>PUTOTOY is:</p>
                     <input id="chk-box1" type="checkbox" onchange="toggleImages();"> a euphemism or slang term for the male genitalia.</input>
@@ -30,22 +39,13 @@
                         <p> / </p>
                         <a href="https://www.instagram.com/rowelsantos2/">@rowelsantos2</a>
                     </div>
-              
                 </div>
             </div>
-
         </div>
 
-        <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+        <div class="gohome"><a href="index.html" ><img class="home" data-src="back/home.gif" alt=""><img class="cloud" data-src="back/Asuncloud (1).gif" alt=""></a>
         </div>
-
-
-        
-           
-
         <footer>&copy; Copyright 2024, putotoy </footer>
-    
-
     </body>
 
     <script>
@@ -70,9 +70,6 @@
             document.getElementById(shown).style.display = 'none';
             document.getElementById(n).style.display = 'block';
             shown = n;
-
         }
     </script>
-
-
 </html>
