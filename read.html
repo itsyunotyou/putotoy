@@ -190,7 +190,7 @@ z-index: 1;
     // Loop through images and create image elements
     for (let i = 1; i <= totalImages; i++) {
       const img = document.createElement('img');
-      img.src = `${imageFolder}${i}.png`; // Assuming images are named as 'image1.jpg', 'image2.jpg', etc.
+      img.setAttribute('data-src', `${imageFolder}${i}.png`); // Changed from 'src' to 'data-src'
       img.alt = `Image ${i}`;
       img.style.display = 'none';
       slideshow.appendChild(img);
