@@ -7,6 +7,17 @@
 </head>
 
 <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var gifs = document.querySelectorAll("img[data-src]");
+    gifs.forEach(function(gif) {
+        if (gif.getBoundingClientRect().top < window.innerHeight) {
+            gif.src = gif.getAttribute("data-src");
+        }
+    });
+});
+
+    
     window.GUMLET_CONFIG = {
         hosts: [{
             current: "{{example.com}}",
@@ -40,7 +51,6 @@
         
     
             <div class="left">
-
                 <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img data-src="home/1.gif" alt="gif"></a>
                 <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img data-src="home/2.gif" alt="gif"></a>
                 <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img data-src="home/3.gif" alt="gif"></a>
