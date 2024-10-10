@@ -326,7 +326,7 @@ html, body{
     justify-content: center;
   }
 #slider{
-  width: 90%;
+  width: 100%;
   position: absolute;
   margin: auto;
   top: 0;
