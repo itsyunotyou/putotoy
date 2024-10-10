@@ -331,9 +331,9 @@ img.bg {
 .backapril{
   top: 0;
   text-align: center;
-  height: 0vh;
+  width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: -10;
  
 }
