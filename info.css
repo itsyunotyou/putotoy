@@ -85,7 +85,7 @@ html, body{
   margin: auto;
     width: 40vw; 
     height: 50vh; 
-    padding: 30%;
+    padding: 5%;
     justify-self: center;
     font-size: 14px;
     
@@ -123,7 +123,7 @@ html, body{
     justify-self: center;
     font-size: 14px;
     margin: auto;
-    padding: 0;
+    padding: 30%;
     background-color: white;
   
 } 
