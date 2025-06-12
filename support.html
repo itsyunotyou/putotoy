@@ -26,9 +26,28 @@
         lazy_load: true
     };
     (function(){d=document;s=d.createElement("script");s.src="https://cdn.jsdelivr.net/npm/gumlet.js@2.2/dist/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("fade-out");
+
+    // Optional: allow page scroll after load
+    document.body.style.overflow = "auto";
+  });
+
+  // Optional: prevent scroll before load
+  document.body.style.overflow = "hidden";
+
+
+
 </script>
 
 <body> 
+
+    <div id="preloader">
+        <div class="loader">LOADING...</div>
+      </div>
 
     <div class="backapril">
         <img data-src="back/april2.jpg" class="bg" alt="">

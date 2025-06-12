@@ -11,6 +11,33 @@ html, body{
     scroll-behavior: none;
   }
 
+  /* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.loader {
+  font-size: 1.5rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: black;
+}
+
+/* Hidden state */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
   .donate{
     background-color: transparent;
     border: none;
