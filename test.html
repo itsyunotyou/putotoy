@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile GIF Shuffle Grid</title>
+  <style>
+
+
+
+html, body{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: jap;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    scroll-behavior: none;
+  }
+
+  /* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.loader {
+  font-size: 1.5rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: black;
+}
+
+/* Hidden state */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+  .donate{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 3;
+    left: 80vw;
+    top: 100vh;
+    font-size: 10px;
+    width: 5vw;
+    height: 3vh;
+
+  }
+
+  .donate a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    top: 100vh;
+  }
+
+
+  .donate::after body{
+    background-image: url(home/salima2.JPG);
+    background-size:  contain;
+    background-position: center;
+  }
+  .outercontainer{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+
+  
+  
+  .left{
+    
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden; 
+  white-space: nowrap;
+  animation: scrollUp 20s linear infinite;
+
+  }
+
+
+  .left img{
+    width: 10vw;
+    height: auto;
+    padding: 0;
+  
+  }
+  
+  @keyframes scrollUp {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+
+  .right{
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden; 
+  white-space: nowrap;
+  animation: scrollDown 20s linear infinite;
+  text-align: right;
+
+  }
+
+  @keyframes scrollDown {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+  
+  .right img{
+    width: 10vw;
+    height: auto;
+    padding: 0;
+  
+  }
+
+  
+
+  .midtop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    float: center;
+    position: absolute;
+  overflow:hidden;
+  overflow-y: hidden;
+  white-space:nowrap;
+  animation: scroll 30s linear infinite;
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .midbottom img{
+    height: 7vh;
+    padding: 0;
+  }
+
+  .midtop img{
+    height: 7vh;
+    padding: 0;
+  }
+  .midbottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    float: center;
+    position: absolute;
+  overflow:hidden;
+  overflow-y: hidden;
+  white-space:nowrap;
+    animation: rightscroll 20s linear infinite;
+  }
+
+
+  @keyframes rightscroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  
+  .typewrite{
+    border: none;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    display: block;
+    font-style: normal;
+    margin: 0;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: rgb(247, 255, 205);
+    padding-top: 5vh;
+    padding-left: 5vw;
+  }
+  .typewrite:after {
+    content: '_';
+    -webkit-animation: blink 400ms linear infinite alternate;
+    animation: blink 400ms linear infinite alternate;
+  }
+  
+  .shop{
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    position: absolute;
+    z-index: -10;
+    top: 100px;
+    bottom: 100px;
+    left: 200px;
+    right: 200px;
+    color: white;
+    margin: auto;
+  }
+
+  p{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.458);
+  }
+
+  .backapril{
+    text-align: right;
+  }
+
+  .donate{
+    top: 38vh;
+    left: 60vw;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(back/hatu2.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  img{
+    height: 100%;
+    text-align: center;
+    align-self: center;
+    margin: auto;
+  }
+
+
+  .gohome{
+    display: flex;
+    flex-direction: row;
+    bottom: 10vh;
+    left: 15vw;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .gohome img{
+    position: absolute;
+  }
+
+.gohome .home{
+  z-index: 10;
+  transform: translate(0vw, -2vh);
+}
+
+.gohome .cloud{
+  z-index: 1;
+}
+
+
+@media only screen and (min-width: 768px){
+  img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+    .bgsalima{
+      display: none;
+    }
+}
+
+
+
+
+    /* Hide mobile by default */
+.gif-grid-mobile {
+  display: none;
+}
+
+/* Show mobile layout only on screens <= 768px */
+@media (max-width: 768px) {
+  .gif-grid-desktop {
+    display: none !important;
+  }
+
+  .gif-grid-mobile {
+    display: block;
+  }
+}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+@media only screen and (max-width: 768px) {
+  .gif-grid {
+    column-count: 3;
+    column-gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .gif-grid a {
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gif-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="gif-grid-desktop" id="desktopGrid">
+  <!-- desktop layout GIFs -->
+       <div id="preloader">
+        <div class="loader">LOADING...</div>
+      </div>
+
+    <div class="backapril">
+        <img src="back/april2.jpg" class="bg" alt="">
+        <img src="back/stand.jpeg" class="bgsalima" alt="">
+    </div>
+
+    
+    <div class="donate"><a href="https://www.gofundme.com/f/putotoy-magazine-isyu-2/donate" ><img src="back/peso.gif" alt=""></a>
+    </div>
+
+    <div class="gohome"><a href="index.html" ><img class="home" src="back/home.gif" alt=""><img class="cloud" src="back/Asuncloud (1).gif" alt=""></a>
+    </div>
+
+
+    
+
+
+    <div class="outercontainer">
+    
+        
+    
+            <div class="left">
+                <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img src="home/1.gif" alt="gif"></a>
+                <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img src="home/2.gif" alt="gif"></a>
+                <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img src="home/3.gif" alt="gif"></a>
+                <a href="https://youtu.be/kw8ZMMkj0YM?si=13VryofMee-HK5vW"><img src="home/4.gif" alt="gif"></a>
+                <a href="https://youtu.be/2t59iyd6QVc?si=aUePb09j8j_0MEtg"><img src="home/5.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=7XmFBu8gM88"><img src="home/6.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=ADc5YeO6sYA"><img src="home/7.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Q4yRe7Bk1Uo"><img src="home/8.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=rg6P4-etwBM"><img src="home/9.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=74zmbI0Bgck"><img src="home/10.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=hVTBQbI7lqI"><img src="home/11.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=WyN2XPfLJYo"><img src="home/12.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=FENPltAC-NA"><img src="home/13.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Dn24PKFAvZ8"><img src="home/14.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Lc3HEA-CkIw"><img src="home/15.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=NI7u9PpQQN4"><img src="home/16.gif" alt="gif"></a>
+                <a href="https://youtu.be/YKp-BFNIGFI?si=mmdYF6iuXZWlsxoW"><img src="home/17.gif" alt="gif"></a>
+                <a href="https://youtu.be/jgbCeTseo54?si=UiiHi2PsiZjcUUcM"><img src="home/18.gif" alt="gif"></a>
+                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/k90ulQWOzsk?si=pP3HML41exdoFSHr"><img src="home/21.gif" alt="gif"></a>
+                <a href="https://youtu.be/V0AncQgMN-0?si=YH0o9lJX9YVSQ72z"><img src="home/22.gif" alt="gif"></a>
+                <a href="https://youtu.be/HlNsGR8043s?si=RJn3UehdOliSQkBq"><img src="home/23.gif" alt="gif"></a>
+                <a href="https://youtu.be/HMdogL_NxJc?si=x4ymkC8SAwAc6eyK"><img src="home/24.gif" alt="gif"></a>
+                <a href="https://youtu.be/BaJVUVBP0p4?si=-45Jyu-6N3jLPcWA"><img src="home/25.gif" alt="gif"></a>
+                <a href="https://youtu.be/5UjKtENR5xU?si=C0dkAUhkaUHimiE7"><img src="home/26.gif" alt="gif"></a>
+                <a href="https://youtu.be/t4G-Doe3P6c?si=SS53LgrSMPsw66u0"><img src="home/27.gif" alt="gif"></a>
+                    <a href="https://youtu.be/_-jxbGbXBD0?si=rG9bpphKsRJy3MQb"><img src="home/28.gif" alt="gif"></a>
+                    <a href="https://youtu.be/O-pHbz8obMc?si=piLNhXLGr7pdZubZ"><img src="home/29.gif" alt="gif"></a>
+                    <a href="https://youtu.be/iUR-zp8mqVs?si=b7942l155ER56vo7"><img src="home/30.gif" alt="gif"></a>
+                    <a href="https://youtu.be/23V0dpGVfW4?si=--yUKFuXdB1y_lTs"><img src="home/31.gif" alt="gif"></a>
+                    <a href="https://youtu.be/Pf_vs-tcF6g?si=nBDMjoPVqOl9edp7"><img src="home/32.gif" alt="gif"></a>
+                    <a href="https://youtu.be/rzciY2n_Q7k?si=WuRYDTRl8wxLqu6T"><img src="home/33.gif" alt="gif"></a>
+                    <a href="https://youtu.be/72ZbByhCJwk?si=SaVoLn5dQz1XNZZJ"><img src="home/34.gif" alt="gif"></a>
+                    <a href="https://youtu.be/3zYL0D_ANjQ?si=7hbQYJFl5Znrt_Xk"><img src="home/35.gif" alt="gif"></a>
+                    <a href="https://youtu.be/FOrcIiWw8xw?si=bMI6fCk-vZm9m6fy"><img src="home/36.gif" alt="gif"></a>
+                    <a href="https://youtu.be/ts0cNzItMlw?si=BswJJjTSl4CaHPq1"><img src="home/37.gif" alt="gif"></a>
+                    <a href="https://youtu.be/KwL_JuWC5wk?si=3wLB-URqFkmPzT4u"><img src="home/38.gif" alt="gif"></a>
+                    <a href="https://youtu.be/XdJvvUm55fI?si=8l0z_45qvMR8rghB"><img src="home/39.gif" alt="gif"></a>
+                    <a href="https://youtu.be/maEVctp0dKg?si=Af5DNYzDpN8WMTvd"><img src="home/40.gif" alt="gif"></a>
+                    <a href="https://youtu.be/1Fy5usgxDL0?si=bdj6t8Y5Zo_ohOwf"><img src="home/41.gif" alt="gif"></a>
+                    <a href="https://youtu.be/P71W4I-vT0c?si=Ny1jeSK_SpO7v7bs"><img src="home/42.gif" alt="gif"></a>
+                    <a href="https://youtu.be/eSI3pATt-ok?si=lUPgCC6QfJxZFCb6"><img src="home/43.gif" alt="gif"></a>
+                    <a href="https://youtu.be/WlSpyTi6cS4?si=kxrEXsUAqOUs_-96"><img src="home/44.gif" alt="gif"></a>
+                    <a href="https://youtu.be/wxCWsflJv90?si=rYFYznLnMmQ0Dutx"><img src="home/45.gif" alt="gif"></a>
+                    <a href="https://youtu.be/If2gnrA-Tus?si=d27uubfLSgNU4WRl"><img src="home/46.gif" alt="gif"></a>
+                    <a href="https://youtu.be/iG8hOBYAj14?si=nzu_ZudPwuSt8xkU"><img src="home/47.gif" alt="gif"></a>
+                    <a href="https://youtu.be/SMuk-JMMUb4?si=z_g5uzmqqYDdUSyB"><img src="home/48.gif" alt="gif"></a>
+ 
+        
+                </div>
+                
+       
+
+            <div>
+
+            </div>
+
+                <div class="midtop">
+ 
+                    <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img src="home/1.gif" alt="gif"></a>
+                    <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img src="home/2.gif" alt="gif"></a>
+             
+                    <a href="https://www.youtube.com/watch?v=7XmFBu8gM88"><img src="home/6.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=ADc5YeO6sYA"><img src="home/7.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=Q4yRe7Bk1Uo"><img src="home/8.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=rg6P4-etwBM"><img src="home/9.gif" alt="gif"></a>
+                                        <a href="https://youtu.be/23V0dpGVfW4?si=--yUKFuXdB1y_lTs"><img src="home/31.gif" alt="gif"></a>
+                    <a href="https://youtu.be/Pf_vs-tcF6g?si=nBDMjoPVqOl9edp7"><img src="home/32.gif" alt="gif"></a>
+                    <a href="https://youtu.be/rzciY2n_Q7k?si=WuRYDTRl8wxLqu6T"><img src="home/33.gif" alt="gif"></a>
+                    <a href="https://youtu.be/72ZbByhCJwk?si=SaVoLn5dQz1XNZZJ"><img src="home/34.gif" alt="gif"></a>
+                    <a href="https://youtu.be/3zYL0D_ANjQ?si=7hbQYJFl5Znrt_Xk"><img src="home/35.gif" alt="gif"></a>
+                    <a href="https://youtu.be/FOrcIiWw8xw?si=bMI6fCk-vZm9m6fy"><img src="home/36.gif" alt="gif"></a>
+                    <a href="https://youtu.be/ts0cNzItMlw?si=BswJJjTSl4CaHPq1"><img src="home/37.gif" alt="gif"></a>
+                    <a href="https://youtu.be/KwL_JuWC5wk?si=3wLB-URqFkmPzT4u"><img src="home/38.gif" alt="gif"></a>
+                    <a href="https://youtu.be/XdJvvUm55fI?si=8l0z_45qvMR8rghB"><img src="home/39.gif" alt="gif"></a>
+                                        <a href="https://www.youtube.com/watch?v=FENPltAC-NA"><img src="home/13.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=Dn24PKFAvZ8"><img src="home/14.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=Lc3HEA-CkIw"><img src="home/15.gif" alt="gif"></a>
+                    <a href="https://youtu.be/maEVctp0dKg?si=Af5DNYzDpN8WMTvd"><img src="home/40.gif" alt="gif"></a>
+                    <a href="https://youtu.be/1Fy5usgxDL0?si=bdj6t8Y5Zo_ohOwf"><img src="home/41.gif" alt="gif"></a>
+                    <a href="https://youtu.be/P71W4I-vT0c?si=Ny1jeSK_SpO7v7bs"><img src="home/42.gif" alt="gif"></a>
+                    <a href="https://youtu.be/eSI3pATt-ok?si=lUPgCC6QfJxZFCb6"><img src="home/43.gif" alt="gif"></a>
+                           <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img src="home/3.gif" alt="gif"></a>
+                    <a href="https://youtu.be/kw8ZMMkj0YM?si=13VryofMee-HK5vW"><img src="home/4.gif" alt="gif"></a>
+                    <a href="https://youtu.be/2t59iyd6QVc?si=aUePb09j8j_0MEtg"><img src="home/5.gif" alt="gif"></a>
+                    <a href="https://youtu.be/WlSpyTi6cS4?si=kxrEXsUAqOUs_-96"><img src="home/44.gif" alt="gif"></a>
+                    <a href="https://youtu.be/wxCWsflJv90?si=rYFYznLnMmQ0Dutx"><img src="home/45.gif" alt="gif"></a>
+                    <a href="https://youtu.be/If2gnrA-Tus?si=d27uubfLSgNU4WRl"><img src="home/46.gif" alt="gif"></a>
+                    <a href="https://youtu.be/iG8hOBYAj14?si=nzu_ZudPwuSt8xkU"><img src="home/47.gif" alt="gif"></a>
+                    <a href="https://youtu.be/SMuk-JMMUb4?si=z_g5uzmqqYDdUSyB"><img src="home/48.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=74zmbI0Bgck"><img src="home/10.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=hVTBQbI7lqI"><img src="home/11.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=WyN2XPfLJYo"><img src="home/12.gif" alt="gif"></a>
+                    <a href="https://www.youtube.com/watch?v=NI7u9PpQQN4"><img src="home/16.gif" alt="gif"></a>
+                    <a href="https://youtu.be/YKp-BFNIGFI?si=mmdYF6iuXZWlsxoW"><img src="home/17.gif" alt="gif"></a>
+                    <a href="https://youtu.be/jgbCeTseo54?si=UiiHi2PsiZjcUUcM"><img src="home/18.gif" alt="gif"></a>
+                    <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                    <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                    <a href="https://youtu.be/k90ulQWOzsk?si=pP3HML41exdoFSHr"><img src="home/21.gif" alt="gif"></a>
+                    <a href="https://youtu.be/V0AncQgMN-0?si=YH0o9lJX9YVSQ72z"><img src="home/22.gif" alt="gif"></a>
+                    <a href="https://youtu.be/HlNsGR8043s?si=RJn3UehdOliSQkBq"><img src="home/23.gif" alt="gif"></a>
+                    <a href="https://youtu.be/HMdogL_NxJc?si=x4ymkC8SAwAc6eyK"><img src="home/24.gif" alt="gif"></a>
+                    <a href="https://youtu.be/BaJVUVBP0p4?si=-45Jyu-6N3jLPcWA"><img src="home/25.gif" alt="gif"></a>
+                    <a href="https://youtu.be/5UjKtENR5xU?si=C0dkAUhkaUHimiE7"><img src="home/26.gif" alt="gif"></a>
+                    <a href="https://youtu.be/t4G-Doe3P6c?si=SS53LgrSMPsw66u0"><img src="home/27.gif" alt="gif"></a>
+                    <a href="https://youtu.be/_-jxbGbXBD0?si=rG9bpphKsRJy3MQb"><img src="home/28.gif" alt="gif"></a>
+                    <a href="https://youtu.be/O-pHbz8obMc?si=piLNhXLGr7pdZubZ"><img src="home/29.gif" alt="gif"></a>
+                    <a href="https://youtu.be/iUR-zp8mqVs?si=b7942l155ER56vo7"><img src="home/30.gif" alt="gif"></a>
+
+ 
+                </div>
+
+
+            
+    
+
+
+            <div class="midbottom">
+    
+
+                <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img src="home/3.gif" alt="gif"></a>
+                           <a href="https://youtu.be/23V0dpGVfW4?si=--yUKFuXdB1y_lTs"><img src="home/31.gif" alt="gif"></a>
+                <a href="https://youtu.be/Pf_vs-tcF6g?si=nBDMjoPVqOl9edp7"><img src="home/32.gif" alt="gif"></a>
+                <a href="https://youtu.be/rzciY2n_Q7k?si=WuRYDTRl8wxLqu6T"><img src="home/33.gif" alt="gif"></a>
+
+                <a href="https://youtu.be/KwL_JuWC5wk?si=3wLB-URqFkmPzT4u"><img src="home/38.gif" alt="gif"></a>
+                <a href="https://youtu.be/XdJvvUm55fI?si=8l0z_45qvMR8rghB"><img src="home/39.gif" alt="gif"></a>
+                <a href="https://youtu.be/maEVctp0dKg?si=Af5DNYzDpN8WMTvd"><img src="home/40.gif" alt="gif"></a>
+                <a href="https://youtu.be/1Fy5usgxDL0?si=bdj6t8Y5Zo_ohOwf"><img src="home/41.gif" alt="gif"></a>
+                <a href="https://youtu.be/kw8ZMMkj0YM?si=13VryofMee-HK5vW"><img src="home/4.gif" alt="gif"></a>
+                <a href="https://youtu.be/2t59iyd6QVc?si=aUePb09j8j_0MEtg"><img src="home/5.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=7XmFBu8gM88"><img src="home/6.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=ADc5YeO6sYA"><img src="home/7.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Q4yRe7Bk1Uo"><img src="home/8.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=rg6P4-etwBM"><img src="home/9.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=74zmbI0Bgck"><img src="home/10.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=hVTBQbI7lqI"><img src="home/11.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=WyN2XPfLJYo"><img src="home/12.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=FENPltAC-NA"><img src="home/13.gif" alt="gif"></a>
+
+                                <a href="https://youtu.be/72ZbByhCJwk?si=SaVoLn5dQz1XNZZJ"><img src="home/34.gif" alt="gif"></a>
+                <a href="https://youtu.be/3zYL0D_ANjQ?si=7hbQYJFl5Znrt_Xk"><img src="home/35.gif" alt="gif"></a>
+                <a href="https://youtu.be/FOrcIiWw8xw?si=bMI6fCk-vZm9m6fy"><img src="home/36.gif" alt="gif"></a>
+                <a href="https://youtu.be/ts0cNzItMlw?si=BswJJjTSl4CaHPq1"><img src="home/37.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Dn24PKFAvZ8"><img src="home/14.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Lc3HEA-CkIw"><img src="home/15.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=NI7u9PpQQN4"><img src="home/16.gif" alt="gif"></a>
+                <a href="https://youtu.be/YKp-BFNIGFI?si=mmdYF6iuXZWlsxoW"><img src="home/17.gif" alt="gif"></a>
+                <a href="https://youtu.be/jgbCeTseo54?si=UiiHi2PsiZjcUUcM"><img src="home/18.gif" alt="gif"></a>
+                                <a href="https://youtu.be/WlSpyTi6cS4?si=kxrEXsUAqOUs_-96"><img src="home/44.gif" alt="gif"></a>
+                <a href="https://youtu.be/wxCWsflJv90?si=rYFYznLnMmQ0Dutx"><img src="home/45.gif" alt="gif"></a>
+                <a href="https://youtu.be/If2gnrA-Tus?si=d27uubfLSgNU4WRl"><img src="home/46.gif" alt="gif"></a>
+                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/k90ulQWOzsk?si=pP3HML41exdoFSHr"><img src="home/21.gif" alt="gif"></a>
+                <a href="https://youtu.be/V0AncQgMN-0?si=YH0o9lJX9YVSQ72z"><img src="home/22.gif" alt="gif"></a>
+                                <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img src="home/1.gif" alt="gif"></a>
+                <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img src="home/2.gif" alt="gif"></a>
+                <a href="https://youtu.be/HlNsGR8043s?si=RJn3UehdOliSQkBq"><img src="home/23.gif" alt="gif"></a>
+                <a href="https://youtu.be/HMdogL_NxJc?si=x4ymkC8SAwAc6eyK"><img src="home/24.gif" alt="gif"></a>
+                <a href="https://youtu.be/BaJVUVBP0p4?si=-45Jyu-6N3jLPcWA"><img src="home/25.gif" alt="gif"></a>
+                <a href="https://youtu.be/5UjKtENR5xU?si=C0dkAUhkaUHimiE7"><img src="home/26.gif" alt="gif"></a>
+                                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/t4G-Doe3P6c?si=SS53LgrSMPsw66u0"><img src="home/27.gif" alt="gif"></a>
+                <a href="https://youtu.be/_-jxbGbXBD0?si=rG9bpphKsRJy3MQb"><img src="home/28.gif" alt="gif"></a>
+                <a href="https://youtu.be/O-pHbz8obMc?si=piLNhXLGr7pdZubZ"><img src="home/29.gif" alt="gif"></a>
+                <a href="https://youtu.be/iUR-zp8mqVs?si=b7942l155ER56vo7"><img src="home/30.gif" alt="gif"></a>
+     
+                <a href="https://youtu.be/P71W4I-vT0c?si=Ny1jeSK_SpO7v7bs"><img src="home/42.gif" alt="gif"></a>
+                <a href="https://youtu.be/eSI3pATt-ok?si=lUPgCC6QfJxZFCb6"><img src="home/43.gif" alt="gif"></a>
+
+                <a href="https://youtu.be/iG8hOBYAj14?si=nzu_ZudPwuSt8xkU"><img src="home/47.gif" alt="gif"></a>
+                <a href="https://youtu.be/SMuk-JMMUb4?si=z_g5uzmqqYDdUSyB"><img src="home/48.gif" alt="gif"></a>
+
+            </div>
+
+       
+
+            <div class="right">
+    
+                <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img src="home/1.gif" alt="gif"></a>
+                <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img src="home/2.gif" alt="gif"></a>
+                <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img src="home/3.gif" alt="gif"></a>
+                <a href="https://youtu.be/kw8ZMMkj0YM?si=13VryofMee-HK5vW"><img src="home/4.gif" alt="gif"></a>
+                <a href="https://youtu.be/2t59iyd6QVc?si=aUePb09j8j_0MEtg"><img src="home/5.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=7XmFBu8gM88"><img src="home/6.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=ADc5YeO6sYA"><img src="home/7.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Q4yRe7Bk1Uo"><img src="home/8.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=rg6P4-etwBM"><img src="home/9.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=74zmbI0Bgck"><img src="home/10.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=hVTBQbI7lqI"><img src="home/11.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=WyN2XPfLJYo"><img src="home/12.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=FENPltAC-NA"><img src="home/13.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Dn24PKFAvZ8"><img src="home/14.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Lc3HEA-CkIw"><img src="home/15.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=NI7u9PpQQN4"><img src="home/16.gif" alt="gif"></a>
+                <a href="https://youtu.be/YKp-BFNIGFI?si=mmdYF6iuXZWlsxoW"><img src="home/17.gif" alt="gif"></a>
+                <a href="https://youtu.be/jgbCeTseo54?si=UiiHi2PsiZjcUUcM"><img src="home/18.gif" alt="gif"></a>
+                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/k90ulQWOzsk?si=pP3HML41exdoFSHr"><img src="home/21.gif" alt="gif"></a>
+                <a href="https://youtu.be/V0AncQgMN-0?si=YH0o9lJX9YVSQ72z"><img src="home/22.gif" alt="gif"></a>
+                <a href="https://youtu.be/HlNsGR8043s?si=RJn3UehdOliSQkBq"><img src="home/23.gif" alt="gif"></a>
+                <a href="https://youtu.be/HMdogL_NxJc?si=x4ymkC8SAwAc6eyK"><img src="home/24.gif" alt="gif"></a>
+                <a href="https://youtu.be/BaJVUVBP0p4?si=-45Jyu-6N3jLPcWA"><img src="home/25.gif" alt="gif"></a>
+                <a href="https://youtu.be/5UjKtENR5xU?si=C0dkAUhkaUHimiE7"><img src="home/26.gif" alt="gif"></a>
+                <a href="https://youtu.be/t4G-Doe3P6c?si=SS53LgrSMPsw66u0"><img src="home/27.gif" alt="gif"></a>
+                <a href="https://youtu.be/_-jxbGbXBD0?si=rG9bpphKsRJy3MQb"><img src="home/28.gif" alt="gif"></a>
+                <a href="https://youtu.be/O-pHbz8obMc?si=piLNhXLGr7pdZubZ"><img src="home/29.gif" alt="gif"></a>
+                <a href="https://youtu.be/iUR-zp8mqVs?si=b7942l155ER56vo7"><img src="home/30.gif" alt="gif"></a>
+                <a href="https://youtu.be/23V0dpGVfW4?si=--yUKFuXdB1y_lTs"><img src="home/31.gif" alt="gif"></a>
+                <a href="https://youtu.be/Pf_vs-tcF6g?si=nBDMjoPVqOl9edp7"><img src="home/32.gif" alt="gif"></a>
+                <a href="https://youtu.be/rzciY2n_Q7k?si=WuRYDTRl8wxLqu6T"><img src="home/33.gif" alt="gif"></a>
+                <a href="https://youtu.be/72ZbByhCJwk?si=SaVoLn5dQz1XNZZJ"><img src="home/34.gif" alt="gif"></a>
+                <a href="https://youtu.be/3zYL0D_ANjQ?si=7hbQYJFl5Znrt_Xk"><img src="home/35.gif" alt="gif"></a>
+                <a href="https://youtu.be/FOrcIiWw8xw?si=bMI6fCk-vZm9m6fy"><img src="home/36.gif" alt="gif"></a>
+                <a href="https://youtu.be/ts0cNzItMlw?si=BswJJjTSl4CaHPq1"><img src="home/37.gif" alt="gif"></a>
+                <a href="https://youtu.be/KwL_JuWC5wk?si=3wLB-URqFkmPzT4u"><img src="home/38.gif" alt="gif"></a>
+                <a href="https://youtu.be/XdJvvUm55fI?si=8l0z_45qvMR8rghB"><img src="home/39.gif" alt="gif"></a>
+                <a href="https://youtu.be/maEVctp0dKg?si=Af5DNYzDpN8WMTvd"><img src="home/40.gif" alt="gif"></a>
+                <a href="https://youtu.be/1Fy5usgxDL0?si=bdj6t8Y5Zo_ohOwf"><img src="home/41.gif" alt="gif"></a>
+                <a href="https://youtu.be/P71W4I-vT0c?si=Ny1jeSK_SpO7v7bs"><img src="home/42.gif" alt="gif"></a>
+                <a href="https://youtu.be/eSI3pATt-ok?si=lUPgCC6QfJxZFCb6"><img src="home/43.gif" alt="gif"></a>
+                <a href="https://youtu.be/WlSpyTi6cS4?si=kxrEXsUAqOUs_-96"><img src="home/44.gif" alt="gif"></a>
+                <a href="https://youtu.be/wxCWsflJv90?si=rYFYznLnMmQ0Dutx"><img src="home/45.gif" alt="gif"></a>
+                <a href="https://youtu.be/If2gnrA-Tus?si=d27uubfLSgNU4WRl"><img src="home/46.gif" alt="gif"></a>
+                <a href="https://youtu.be/iG8hOBYAj14?si=nzu_ZudPwuSt8xkU"><img src="home/47.gif" alt="gif"></a>
+                <a href="https://youtu.be/SMuk-JMMUb4?si=z_g5uzmqqYDdUSyB"><img src="home/48.gif" alt="gif"></a>
+
+            
+            </div>
+    
+        </div>
+</div>
+
+<div class="gif-grid-mobile" id="mobileGrid">
+  <!-- mobile layout GIFs -->
+   <div class="gif-grid" id="gifGrid">
+                 <a href="https://youtu.be/TrpVynO42Oc?si=aUXUYWOxtLwrF39z"><img src="home/3.gif" alt="gif"></a>
+                           <a href="https://youtu.be/23V0dpGVfW4?si=--yUKFuXdB1y_lTs"><img src="home/31.gif" alt="gif"></a>
+                <a href="https://youtu.be/Pf_vs-tcF6g?si=nBDMjoPVqOl9edp7"><img src="home/32.gif" alt="gif"></a>
+                <a href="https://youtu.be/rzciY2n_Q7k?si=WuRYDTRl8wxLqu6T"><img src="home/33.gif" alt="gif"></a>
+
+                <a href="https://youtu.be/KwL_JuWC5wk?si=3wLB-URqFkmPzT4u"><img src="home/38.gif" alt="gif"></a>
+                <a href="https://youtu.be/XdJvvUm55fI?si=8l0z_45qvMR8rghB"><img src="home/39.gif" alt="gif"></a>
+                <a href="https://youtu.be/maEVctp0dKg?si=Af5DNYzDpN8WMTvd"><img src="home/40.gif" alt="gif"></a>
+                <a href="https://youtu.be/1Fy5usgxDL0?si=bdj6t8Y5Zo_ohOwf"><img src="home/41.gif" alt="gif"></a>
+                <a href="https://youtu.be/kw8ZMMkj0YM?si=13VryofMee-HK5vW"><img src="home/4.gif" alt="gif"></a>
+                <a href="https://youtu.be/2t59iyd6QVc?si=aUePb09j8j_0MEtg"><img src="home/5.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=7XmFBu8gM88"><img src="home/6.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=ADc5YeO6sYA"><img src="home/7.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Q4yRe7Bk1Uo"><img src="home/8.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=rg6P4-etwBM"><img src="home/9.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=74zmbI0Bgck"><img src="home/10.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=hVTBQbI7lqI"><img src="home/11.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=WyN2XPfLJYo"><img src="home/12.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=FENPltAC-NA"><img src="home/13.gif" alt="gif"></a>
+
+                                <a href="https://youtu.be/72ZbByhCJwk?si=SaVoLn5dQz1XNZZJ"><img src="home/34.gif" alt="gif"></a>
+                <a href="https://youtu.be/3zYL0D_ANjQ?si=7hbQYJFl5Znrt_Xk"><img src="home/35.gif" alt="gif"></a>
+                <a href="https://youtu.be/FOrcIiWw8xw?si=bMI6fCk-vZm9m6fy"><img src="home/36.gif" alt="gif"></a>
+                <a href="https://youtu.be/ts0cNzItMlw?si=BswJJjTSl4CaHPq1"><img src="home/37.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Dn24PKFAvZ8"><img src="home/14.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=Lc3HEA-CkIw"><img src="home/15.gif" alt="gif"></a>
+                <a href="https://www.youtube.com/watch?v=NI7u9PpQQN4"><img src="home/16.gif" alt="gif"></a>
+                <a href="https://youtu.be/YKp-BFNIGFI?si=mmdYF6iuXZWlsxoW"><img src="home/17.gif" alt="gif"></a>
+                <a href="https://youtu.be/jgbCeTseo54?si=UiiHi2PsiZjcUUcM"><img src="home/18.gif" alt="gif"></a>
+                                <a href="https://youtu.be/WlSpyTi6cS4?si=kxrEXsUAqOUs_-96"><img src="home/44.gif" alt="gif"></a>
+                <a href="https://youtu.be/wxCWsflJv90?si=rYFYznLnMmQ0Dutx"><img src="home/45.gif" alt="gif"></a>
+                <a href="https://youtu.be/If2gnrA-Tus?si=d27uubfLSgNU4WRl"><img src="home/46.gif" alt="gif"></a>
+                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/k90ulQWOzsk?si=pP3HML41exdoFSHr"><img src="home/21.gif" alt="gif"></a>
+                <a href="https://youtu.be/V0AncQgMN-0?si=YH0o9lJX9YVSQ72z"><img src="home/22.gif" alt="gif"></a>
+                                <a href="https://youtu.be/PC7n07JiIuI?si=Fyt5W0-ORourO26m"> <img src="home/1.gif" alt="gif"></a>
+                <a href="https://youtu.be/Nkg30t3aM3Q?si=e5UBaUtdx-lD9ORq"><img src="home/2.gif" alt="gif"></a>
+                <a href="https://youtu.be/HlNsGR8043s?si=RJn3UehdOliSQkBq"><img src="home/23.gif" alt="gif"></a>
+                <a href="https://youtu.be/HMdogL_NxJc?si=x4ymkC8SAwAc6eyK"><img src="home/24.gif" alt="gif"></a>
+                <a href="https://youtu.be/BaJVUVBP0p4?si=-45Jyu-6N3jLPcWA"><img src="home/25.gif" alt="gif"></a>
+                <a href="https://youtu.be/5UjKtENR5xU?si=C0dkAUhkaUHimiE7"><img src="home/26.gif" alt="gif"></a>
+                                <a href="https://youtu.be/7xjfEl2yVkA?si=4mZ1wwzdL_erbnpO"><img src="home/19.gif" alt="gif"></a>
+                <a href="https://youtu.be/9QUztdY3SsY?si=FHYJpF_CIbuHPwqd"><img src="home/20.gif" alt="gif"></a>
+                <a href="https://youtu.be/t4G-Doe3P6c?si=SS53LgrSMPsw66u0"><img src="home/27.gif" alt="gif"></a>
+                <a href="https://youtu.be/_-jxbGbXBD0?si=rG9bpphKsRJy3MQb"><img src="home/28.gif" alt="gif"></a>
+                <a href="https://youtu.be/O-pHbz8obMc?si=piLNhXLGr7pdZubZ"><img src="home/29.gif" alt="gif"></a>
+                <a href="https://youtu.be/iUR-zp8mqVs?si=b7942l155ER56vo7"><img src="home/30.gif" alt="gif"></a>
+     
+                <a href="https://youtu.be/P71W4I-vT0c?si=Ny1jeSK_SpO7v7bs"><img src="home/42.gif" alt="gif"></a>
+                <a href="https://youtu.be/eSI3pATt-ok?si=lUPgCC6QfJxZFCb6"><img src="home/43.gif" alt="gif"></a>
+
+                <a href="https://youtu.be/iG8hOBYAj14?si=nzu_ZudPwuSt8xkU"><img src="home/47.gif" alt="gif"></a>
+                <a href="https://youtu.be/SMuk-JMMUb4?si=z_g5uzmqqYDdUSyB"><img src="home/48.gif" alt="gif"></a>
+
+</div>
+
+</div>
+
+<script>
+  const grid = document.getElementById("gifGrid");
+
+  function shuffleSubset() {
+    const children = Array.from(grid.children);
+
+    // Pick 3–7 random items to shuffle
+    const count = Math.floor(Math.random() * 5) + 3; // 3 to 7
+    const selected = [];
+
+    while (selected.length < count && selected.length < children.length) {
+      const rand = children[Math.floor(Math.random() * children.length)];
+      if (!selected.includes(rand)) {
+        selected.push(rand);
+      }
+    }
+
+    // Shuffle the selected items among themselves
+    for (let i = selected.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [selected[i], selected[j]] = [selected[j], selected[i]];
+    }
+
+    // Move them in the DOM
+    selected.forEach(el => grid.appendChild(el));
+
+    // Set next shuffle in 1.5–4 seconds
+    const nextDelay = Math.random() * 2500 + 1500;
+    setTimeout(shuffleSubset, nextDelay);
+  }
+
+  function startIfMobile() {
+    if (window.innerWidth <= 768) {
+      shuffleSubset(); // start shuffling
+    }
+  }
+
+  window.addEventListener("load", startIfMobile);
+</script>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var gifs = document.querySelectorAll("img[src]");
+    gifs.forEach(function(gif) {
+        if (gif.getBoundingClientRect().top < window.innerHeight) {
+            gif.src = gif.getAttribute("src");
+        }
+    });
+});
+
+    
+    window.GUMLET_CONFIG = {
+        hosts: [{
+            current: "{{example.com}}",
+            gumlet: "putotoy.gumlet.io"
+        }],
+        lazy_load: true
+    };
+    (function(){d=document;s=d.createElement("script");s.src="https://cdn.jsdelivr.net/npm/gumlet.js@2.2/dist/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("fade-out");
+
+    // Optional: allow page scroll after load
+    document.body.style.overflow = "auto";
+  });
+
+  // Optional: prevent scroll before load
+  document.body.style.overflow = "hidden";
+
+
+
+</script>
+</body>
+</html>

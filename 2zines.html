@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Image Pages</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .container {
+      height: 60vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 0;
+    }
+
+    .pdf-image {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .pdf-image:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      .pdf-image {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="read.html">
+      <img src="scans/1.png" alt="Go to Page 1" class="pdf-image" />
+    </a>
+    <a href="page2.html">
+      <img src="scans2/1.png" alt="Go to Page 2" class="pdf-image" />
+    </a>
+  </div>
+</body>
+</html>
